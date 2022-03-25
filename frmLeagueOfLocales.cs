@@ -53,9 +53,9 @@ namespace league_of_locales_form
 
                     if (pbe_directory_label.ForeColor == Color.Red)
                     {
-                        pbe_directory_label.ForeColor = Color.DodgerBlue;
-                        browse_PBE.ForeColor = Color.DodgerBlue;
-                        pbe_path.ForeColor = Color.Black;
+                        league_path_label.ForeColor = Color.DodgerBlue;
+                        browse_LOL.ForeColor = Color.DodgerBlue;
+                        league_path.ForeColor = Color.Black;
                     }
                 }
                 catch (System.IO.DirectoryNotFoundException)

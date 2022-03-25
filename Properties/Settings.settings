@@ -6,10 +6,10 @@
       <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="league_path" Type="System.String" Scope="User">
-      <Value Profile="(Default)">"C:\Riot Games\League of Legends"</Value>
+      <Value Profile="(Default)">C:\Riot Games\League of Legends</Value>
     </Setting>
     <Setting Name="pbe_path" Type="System.String" Scope="User">
-      <Value Profile="(Default)">"C:\Riot Games\PBE"</Value>
+      <Value Profile="(Default)">C:\Riot Games\PBE</Value>
     </Setting>
   </Settings>
 </SettingsFile>
