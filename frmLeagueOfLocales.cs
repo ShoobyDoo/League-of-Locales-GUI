@@ -19,6 +19,8 @@ namespace league_of_locales_form
         private readonly System.Windows.Forms.Timer _timerLeague = new System.Windows.Forms.Timer();
         private readonly System.Windows.Forms.Timer _timerClient = new System.Windows.Forms.Timer();
 
+        public bool LocaleSupplied = true;
+
         public league_of_locales()
         {
             InitializeComponent();
@@ -173,158 +175,107 @@ namespace league_of_locales_form
                 ProcessStartInfo leagueClient = new ProcessStartInfo(Globals.LEAGUE_PATH_CLIENT);
                 leagueClient.FileName = "LeagueClient.exe";
 
-                // Selected English
-                if (language_list.SelectedIndex == 0)
+                switch (language_list.SelectedIndex)
                 {
-                    Properties.Settings.Default.SelectedIndex = language_list.SelectedIndex;
-                    leagueClient.Arguments = "--locale=" + Globals.ENGLISH;
-                    Process.Start(leagueClient);
+                    case 0: // Selected English
+                        Properties.Settings.Default.SelectedIndex = language_list.SelectedIndex;
+                        leagueClient.Arguments = String.Format("--locale={0}", Globals.ENGLISH);
+                        break;
+
+                    case 1: // Selected Portuguese
+                        Properties.Settings.Default.SelectedIndex = language_list.SelectedIndex;
+                        leagueClient.Arguments = String.Format("--locale={0}", Globals.PORTUGEUESE);
+                        break;
+
+                    case 2: // Selected Turkish
+                        Properties.Settings.Default.SelectedIndex = language_list.SelectedIndex;
+                        leagueClient.Arguments = String.Format("--locale={0}", Globals.TURKISH);
+                        break;
+
+                    case 3: // Selected German
+                        Properties.Settings.Default.SelectedIndex = language_list.SelectedIndex;
+                        leagueClient.Arguments = String.Format("--locale={0}", Globals.GERMAN);
+                        break;
+
+                    case 4: // Selected French
+                        Properties.Settings.Default.SelectedIndex = language_list.SelectedIndex;
+                        leagueClient.Arguments = String.Format("--locale={0}", Globals.FRENCH);
+                        break;
+
+                    case 5: // Selected Italian
+                        Properties.Settings.Default.SelectedIndex = language_list.SelectedIndex;
+                        leagueClient.Arguments = String.Format("--locale={0}", Globals.ITALIAN);
+                        break;
+
+                    case 6: // Selected Czech
+                        Properties.Settings.Default.SelectedIndex = language_list.SelectedIndex;
+                        leagueClient.Arguments = String.Format("--locale={0}", Globals.CZECH);
+                        break;
+
+                    case 7: // Selected Greek
+                        Properties.Settings.Default.SelectedIndex = language_list.SelectedIndex;
+                        leagueClient.Arguments = String.Format("--locale={0}", Globals.GREEK);
+                        break;
+
+                    case 8: // Selected Hungarian
+                        Properties.Settings.Default.SelectedIndex = language_list.SelectedIndex;
+                        leagueClient.Arguments = String.Format("--locale={0}", Globals.HUNGARIAN);
+                        break;
+
+                    case 9: // Selected Polish
+                        Properties.Settings.Default.SelectedIndex = language_list.SelectedIndex;
+                        leagueClient.Arguments = String.Format("--locale={0}", Globals.POLISH);
+                        break;
+
+                    case 10: // Selected Romanian
+                        Properties.Settings.Default.SelectedIndex = language_list.SelectedIndex;
+                        leagueClient.Arguments = String.Format("--locale={0}", Globals.ROMANIAN);
+                        break;
+
+                    case 11: // Selected Russian
+                        Properties.Settings.Default.SelectedIndex = language_list.SelectedIndex;
+                        leagueClient.Arguments = String.Format("--locale={0}", Globals.RUSSIAN);
+                        break;
+
+                    case 12: // Selected Spanish
+                        Properties.Settings.Default.SelectedIndex = language_list.SelectedIndex;
+                        leagueClient.Arguments = String.Format("--locale={0}", Globals.SPANISH);
+                        break;
+
+                    case 13: // Selected Japanese
+                        Properties.Settings.Default.SelectedIndex = language_list.SelectedIndex;
+                        leagueClient.Arguments = String.Format("--locale={0}", Globals.JAPANESE);
+                        break;
+
+                    case 14: // Selected Chinese
+                        Properties.Settings.Default.SelectedIndex = language_list.SelectedIndex;
+                        leagueClient.Arguments = String.Format("--locale={0}", Globals.CHINESE);
+                        break;
+
+                    case 15: // Selected Korean
+                        Properties.Settings.Default.SelectedIndex = language_list.SelectedIndex;
+                        leagueClient.Arguments = String.Format("--locale={0}", Globals.KOREAN);
+                        break;
+
+                    case 16: // Selected Indonesian
+                        Properties.Settings.Default.SelectedIndex = language_list.SelectedIndex;
+                        leagueClient.Arguments = String.Format("--locale={0}", Globals.INDONESIAN);
+                        break;
+
+                    default:
+                        status.Text = "[Error] No option selected!";
+                        LocaleSupplied = false;
+                        break;
                 }
 
-                // Selected Portuguese
-                else if (language_list.SelectedIndex == 1)
-                {
-                    Properties.Settings.Default.SelectedIndex = language_list.SelectedIndex;
-                    leagueClient.Arguments = "--locale=" + Globals.PORTUGEUESE;
-                    Process.Start(leagueClient);
-                }
-
-                // Selected Turkish
-                else if (language_list.SelectedIndex == 2)
-                {
-                    Properties.Settings.Default.SelectedIndex = language_list.SelectedIndex;
-                    leagueClient.Arguments = "--locale=" + Globals.TURKISH;
-                    Process.Start(leagueClient);
-                }
-
-                // Selected Dutch
-                else if (language_list.SelectedIndex == 3)
-                {
-                    Properties.Settings.Default.SelectedIndex = language_list.SelectedIndex;
-                    leagueClient.Arguments = "--locale=" + Globals.GERMAN;
-                    Process.Start(leagueClient);
-                }
-
-                // Selected French
-                else if (language_list.SelectedIndex == 4)
-                {
-                    Properties.Settings.Default.SelectedIndex = language_list.SelectedIndex;
-                    leagueClient.Arguments = "--locale=" + Globals.FRENCH;
-                    Process.Start(leagueClient);
-                }
-
-                // Selected Italian
-                else if (language_list.SelectedIndex == 5)
-                {
-                    Properties.Settings.Default.SelectedIndex = language_list.SelectedIndex;
-                    leagueClient.Arguments = "--locale=" + Globals.ITALIAN;
-                    Process.Start(leagueClient);
-                }
-
-                // Selected Czech
-                else if (language_list.SelectedIndex == 6)
-                {
-                    Properties.Settings.Default.SelectedIndex = language_list.SelectedIndex;
-                    leagueClient.Arguments = "--locale=" + Globals.CZECH;
-                    Process.Start(leagueClient);
-                }
-
-                // Selected Greek
-                else if (language_list.SelectedIndex == 7)
-                {
-                    Properties.Settings.Default.SelectedIndex = language_list.SelectedIndex;
-                    leagueClient.Arguments = "--locale=" + Globals.GREEK;
-                    Process.Start(leagueClient);
-                }
-
-                // Selected Hungarian
-                else if (language_list.SelectedIndex == 8)
-                {
-                    Properties.Settings.Default.SelectedIndex = language_list.SelectedIndex;
-                    leagueClient.Arguments = "--locale=" + Globals.HUNGARIAN;
-                    Process.Start(leagueClient);
-                }
-
-                // Selected Polish
-                else if (language_list.SelectedIndex == 9)
-                {
-                    Properties.Settings.Default.SelectedIndex = language_list.SelectedIndex;
-                    leagueClient.Arguments = "--locale=" + Globals.POLISH;
-                    Process.Start(leagueClient);
-                }
-
-                // Selected Romanian
-                else if (language_list.SelectedIndex == 10)
-                {
-                    Properties.Settings.Default.SelectedIndex = language_list.SelectedIndex;
-                    leagueClient.Arguments = "--locale=" + Globals.ROMANIAN;
-                    Process.Start(leagueClient);
-                }
-
-                // Selected Russian
-                else if (language_list.SelectedIndex == 11)
-                {
-                    Properties.Settings.Default.SelectedIndex = language_list.SelectedIndex;
-                    leagueClient.Arguments = "--locale=" + Globals.RUSSIAN;
-                    Process.Start(leagueClient);
-                }
-
-                // Selected Spanish
-                else if (language_list.SelectedIndex == 12)
-                {
-                    Properties.Settings.Default.SelectedIndex = language_list.SelectedIndex;
-                    leagueClient.Arguments = "--locale=" + Globals.SPANISH;
-                    Process.Start(leagueClient);
-                }
-
-                // Selected Japanese
-                else if (language_list.SelectedIndex == 13)
-                {
-                    Properties.Settings.Default.SelectedIndex = language_list.SelectedIndex;
-                    leagueClient.Arguments = "--locale=" + Globals.JAPANESE;
-                    Process.Start(leagueClient);
-                }
-
-                // Selected Chinese
-                else if (language_list.SelectedIndex == 14)
-                {
-                    Properties.Settings.Default.SelectedIndex = language_list.SelectedIndex;
-                    leagueClient.Arguments = "--locale=" + Globals.CHINESE;
-                    Process.Start(leagueClient);
-                }
-
-                // Selected Korean
-                else if (language_list.SelectedIndex == 15)
-                {
-                    Properties.Settings.Default.SelectedIndex = language_list.SelectedIndex;
-                    leagueClient.Arguments = "--locale=" + Globals.KOREAN;
-                    Process.Start(leagueClient);
-                }
-
-                // Selected Indonesian
-                else if (language_list.SelectedIndex == 16)
-                {
-                    Properties.Settings.Default.SelectedIndex = language_list.SelectedIndex;
-                    leagueClient.Arguments = "--locale=" + Globals.INDONESIAN;
-                    Process.Start(leagueClient);
-                }
-
-                // No option selected
-                else
-                {
-                    status.Text = "[Error] No option selected!";
-                }
-                   
-                // Save the settings that have been set now
-                Properties.Settings.Default.Save();
-
+                if (LocaleSupplied) { Process.Start(leagueClient); } // If the locale has been supplied (not the default select locale prompt)
+                Properties.Settings.Default.Save(); // Save the settings that have been set now
             }
 
             catch (Exception ex)
             {
                 status.Text = "[Error] " + ex.Message;
             }
-
         }
 
         private void discord_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
